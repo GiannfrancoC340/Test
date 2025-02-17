@@ -1,4 +1,6 @@
 const choices = ["rock", "paper", "scissors"];
+let playerScore = 0;
+let computerScore = 0;
 
 document.querySelectorAll(".choice").forEach(button => {
     button.addEventListener("click", function () {
@@ -12,6 +14,13 @@ document.querySelectorAll(".choice").forEach(button => {
             Computer chose: ${computerChoice} <br>
             <strong>${result}</strong>
         `;
+
+        if (result.includes("win 😁")) {
+            playerScore++;
+        } else if (result.includes("win 😞")) {
+            computerScore++;
+        }
+        updateScoreboard();
     });
 });
 
@@ -25,4 +34,16 @@ function getWinner(user, computer) {
     } else {
         return "Computer win 😞"; 
     }
+}
+
+function updateScoreboard() {
+    document.getElementById("player-score").textContent = playerScore;
+    document.getElementById("computer-score").textContent = computerScore;
+
+}
+
+function resetScore() {
+    playerScore = 0;
+    computerScore = 0;
+    updateScoreboard();
 }
