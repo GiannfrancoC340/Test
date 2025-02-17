@@ -21,6 +21,19 @@ button {
     border-radius: 8px;
     border: 1px solid;
     margin-top: 40px;
+    position: relative;
+    transition: .4s ease-in;
+    z-index: 1;
+}
+
+button:before, button:after {
+    position: absolute;
+    content: "";
+    z-index: -1;
+}
+
+button:hover {
+    box-shadow: inset -10.5em 0 0 0 #ff96ad, inset 10.5em 0 0 0 #ff96ad;
 }
 
 #rock {
