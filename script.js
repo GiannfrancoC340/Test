@@ -17,12 +17,12 @@ document.querySelectorAll(".choice").forEach(button => {
 
 function getWinner(user, computer) {
     if (user === computer) {
-        return "It's a draw";
+        return "It's a draw 😐";
     } else if (
         (user === "rock" && computer === "scissors") || (user === "paper" && computer === "rock") || (user === "scissors" && computer === "paper") 
     ) {
-        return "You win";
+        return "You win 😁";
     } else {
-        return "Computer win"; 
+        return "Computer win 😞"; 
     }
 }
