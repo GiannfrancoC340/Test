@@ -1,6 +1,7 @@
 const choices = ["rock", "paper", "scissors"];
 let playerScore = 0;
 let computerScore = 0;
+let drawScore = 0;
 
 document.querySelectorAll(".choice").forEach(button => {
     button.addEventListener("click", function () {
@@ -19,6 +20,8 @@ document.querySelectorAll(".choice").forEach(button => {
             playerScore++;
         } else if (result.includes("win 😞")) {
             computerScore++;
+        } else if (result.includes("draw 😐")) {
+            drawScore++;
         }
         updateScoreboard();
     });
@@ -39,11 +42,13 @@ function getWinner(user, computer) {
 function updateScoreboard() {
     document.getElementById("player-score").textContent = playerScore;
     document.getElementById("computer-score").textContent = computerScore;
+    document.getElementById("draw-score").textContent = drawScore;
 
 }
 
 function resetScore() {
     playerScore = 0;
     computerScore = 0;
+    drawScore = 0;
     updateScoreboard();
 }
